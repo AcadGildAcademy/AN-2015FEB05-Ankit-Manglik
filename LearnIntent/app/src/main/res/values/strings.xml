@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LearnIntent</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="bt_app">Play Store</string>
+    <string name="bt_dev">Developer</string>
+    <string name="bt_setting">Settings</string>
+    <string name="bt_wifi">Wifi</string>
+    <string name="bt_blue">Bluetooth</string>
+    <string name="bt_account">Add Account</string>
+</resources>
