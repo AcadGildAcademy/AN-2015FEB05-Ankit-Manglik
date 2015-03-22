@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.afewsomethings.learnintent" >
-    <uses-permission android:name="android.permission.INTERNET" />
-    <user-permission android:name="android.permission.WRITE_SETTINGS"/>
-    <user-permission android:name="android.permission.ACCOUNT_MANAGER"/>
-    <user-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
-    <user-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
-
-
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,10 +18,7 @@
 
             </intent-filter>
         </activity>
-        <activity android:name="settingmenu"></activity>
-        <activity android:name=".downloadbars"></activity>
-
-
+        <activity android:name=".settingmenu"></activity>
     </application>
 
 </manifest>
