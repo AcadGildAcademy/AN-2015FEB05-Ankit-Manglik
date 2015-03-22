@@ -27,4 +27,13 @@
         android:id="@+id/bt_account"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tv_search"
+        android:layout_below="@+id/bt_account"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="88dp" />
 </RelativeLayout>

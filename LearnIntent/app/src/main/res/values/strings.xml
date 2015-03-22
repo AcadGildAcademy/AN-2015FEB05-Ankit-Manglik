@@ -9,4 +9,5 @@
     <string name="bt_wifi">Wifi</string>
     <string name="bt_blue">Bluetooth</string>
     <string name="bt_account">Add Account</string>
+    <string name="bt_search">Search</string>
 </resources>
