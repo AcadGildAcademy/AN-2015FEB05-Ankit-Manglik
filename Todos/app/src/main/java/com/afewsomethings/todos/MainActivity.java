@@ -13,12 +13,8 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_note);
-
-
-
-
-        DatabaseHand db = new DatabaseHand(this);
+           DatabaseHand db = new DatabaseHand(this);
+            db.addNote(new Notes("12/03/2014","to do","to do app"));
 
 
 
