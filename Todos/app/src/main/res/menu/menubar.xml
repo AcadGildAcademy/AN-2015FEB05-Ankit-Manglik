@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+     xmlns:notesapps="http://schemas.android.com/apk/res-auto"
+     xmlns:tools="http://schemas.android.com/tools"
+     tools:context="com.afewsomethings.todos"
+
+    <item android:title="Notes"
+       android:id="@+id/note"
+        android:icon="@android:drawable/ic_delete"></item>
+
+
+    <item android:title="Save"
+        android:id="@+id/save"
+    android:icon="@android:drawable/ic_menu_save"></item>
+
+
+
+
+
+</menu>
