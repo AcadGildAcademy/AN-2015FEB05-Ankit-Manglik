@@ -9,16 +9,18 @@ public class Notes {
     String _date;
     String _time;
     String _noteDetails;
+    private int status;
 
     public Notes(){
             }
 
-    public Notes(int _id,String date, String note, String noteDetails){
+    public Notes(String date, String note, String noteDetails, int status){
         super();
-        this._id=_id;
+
         this._date=date;
         this._note=note;
         this._noteDetails=noteDetails;
+        this.status=status;
             }
 
 
@@ -42,6 +44,11 @@ public class Notes {
     public void  setNoteDetails(String noteDetails){this._noteDetails=noteDetails;}
 
 
+    public int getStatus() {
+        return status;
+    }
 
-
+    public void setStatus(int status) {
+        this.status = status;
+    }
 }

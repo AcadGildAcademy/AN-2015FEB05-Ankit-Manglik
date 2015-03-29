@@ -34,7 +34,7 @@ public class DatabaseHand extends SQLiteOpenHelper{
                 + KEY_ID +" INTEGER PRIMARY KEY,"
                 + KEY_DATE + " DATE,"
                 + KEY_NOTE + " TEXT,"
-                + KEY_NOTE_DETAILS + " TEXT"
+                + KEY_NOTE_DETAILS + " TEXT,"
                 + KEY_STATUS + " INTEGER"
                 +")";
 
@@ -58,7 +58,7 @@ public class DatabaseHand extends SQLiteOpenHelper{
         values.put(KEY_NOTE_DETAILS, notes.getNoteDetails());
         values.put(KEY_STATUS, "0");
         db.insert(TABLE_NOTES, null, values);
-        db.close();
+
     }
 
         public Notes getNote(int id) {
@@ -73,6 +73,7 @@ public class DatabaseHand extends SQLiteOpenHelper{
                     note.setDate(cursor.getString(1));
                     note.setNote(cursor.getString(2));
                 note.setNoteDetails(cursor.getString(3));
+                note.setStatus(cursor.getInt(4));
                 cursor.close();
             } else note = null;
 
@@ -93,6 +94,8 @@ public class DatabaseHand extends SQLiteOpenHelper{
              notes.setId(Integer.parseInt(cursor.getString(0)));
              notes.setDate(cursor.getString(1));
              notes.setNote(cursor.getString(2));
+                notes.setNoteDetails(cursor.getString(3));
+                notes.setStatus(cursor.getInt(4));
              notesList.add(notes);
 
             } while (cursor.moveToNext());
