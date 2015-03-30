@@ -39,6 +39,8 @@ public class MainActivity extends ActionBarActivity {
         MyAdapt adap=new MyAdapt(this,list);
         lv.setAdapter(adap);
         getActionBar();
+
+
     }
 
 
@@ -50,21 +52,23 @@ public class MainActivity extends ActionBarActivity {
 
     //@Override
     private void notesdialog (){
+        final Intent intent = new Intent(this, MainActivity.class);
         LayoutInflater nd=LayoutInflater.from(this);
-        View promptnote=nd.inflate(R.layout.activity_save_note,null);
+        final View promptnote=nd.inflate(R.layout.activity_save_note,null);
         final AlertDialog.Builder alertnote=new AlertDialog.Builder(this);
         alertnote.setView(promptnote);
         alertnote.setCancelable(false);
         alertnote.setPositiveButton("SAVE", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                EditText date1 = (EditText)findViewById(R.id.et_date);
-                EditText NoteHead1 = (EditText)findViewById(R.id.et_newnotehead);
-                EditText NoteDetails1 = (EditText)findViewById(R.id.et_notedetails);
+                EditText date1 = (EditText)promptnote.findViewById(R.id.et_date);
+                EditText NoteHead1 = (EditText)promptnote.findViewById(R.id.et_newnotehead);
+                EditText NoteDetails1 = (EditText)promptnote.findViewById(R.id.et_notedetails);
                 String date = date1.getText().toString();
                 String NoteHead=NoteHead1.getText().toString();
                 String NoteDetails=NoteDetails1.getText().toString();
                 db.addNote(new Notes(date,NoteHead,NoteDetails,0));
+                               startActivity(intent);
             }
         });
         alertnote.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -81,8 +85,11 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+
         switch (item.getItemId()){
-            case R.id.not: notesdialog();
+            case R.id.not:
+                notesdialog();
+
             break;
         }
         return super.onOptionsItemSelected(item);

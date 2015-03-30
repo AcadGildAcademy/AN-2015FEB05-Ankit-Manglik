@@ -7,14 +7,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
-        android:id="@+id/tv_NoteTitle" />
+        android:id="@+id/tv_NoteTitle"
+           android:layout_below="@+id/tv_titledt"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/tv_NoteDetails"
-        android:layout_below="@+id/tv_NoteTitle"
+        android:layout_below="@+id/iv_incomlete_todo"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -37,5 +40,15 @@
         android:layout_marginLeft="280dp"
         android:layout_marginStart="280dp"
          />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/tv_titledt"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal" />
 
 </RelativeLayout>

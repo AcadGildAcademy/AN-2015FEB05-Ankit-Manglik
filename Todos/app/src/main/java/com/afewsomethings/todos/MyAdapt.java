@@ -31,14 +31,11 @@ public class MyAdapt extends ArrayAdapter {
         return notesList.size();
         else
             return 0;
-
     }
 
 
 @Override
-
     public View getView(int position, View convertView,ViewGroup parent){
-
     LayoutInflater inflater= (LayoutInflater)
             context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -47,14 +44,19 @@ public class MyAdapt extends ArrayAdapter {
     TextView noteDetails = (TextView) rowView.findViewById(R.id.tv_NoteDetails);
     TextView notedate = (TextView) rowView.findViewById(R.id.tv_Noteduedate);
 
+
     noteTitle.setText(notesList.get(position).getNote());
     noteDetails.setText(notesList.get(position).getNoteDetails());
     notedate.setText(notesList.get(position).getDate());
 
 
 
+
     return rowView;
 }
+
+
+
 
 
 
