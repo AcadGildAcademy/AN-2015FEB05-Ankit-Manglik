@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_movieposter"
+        android:src="@drawable/ic_launcher"
+        android:layout_alignTop="@+id/tv_movieName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movie Name"
+        android:id="@+id/tv_movieName"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/iv_movieposter"
+        android:layout_toEndOf="@+id/iv_movieposter"
+        android:layout_marginTop="28dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Released On:"
+        android:id="@+id/tv_releasedOn"
+        android:layout_below="@+id/tv_movieName"
+        android:layout_toRightOf="@+id/iv_movieposter"
+        android:layout_toEndOf="@+id/iv_movieposter" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:id="@+id/tv_releasedDate"
+        android:layout_alignTop="@+id/tv_releasedOn"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Popularity"
+        android:id="@+id/tv_popularity"
+        android:layout_below="@+id/tv_releasedOn"
+        android:layout_toRightOf="@+id/iv_movieposter"
+        android:layout_toEndOf="@+id/iv_movieposter" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_below="@+id/tv_releasedDate"
+        android:layout_toRightOf="@+id/tv_releasedOn"
+        android:layout_alignBottom="@+id/tv_popularity"
+        android:numStars="5" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:layout_below="@+id/tv_popularity"
+        android:layout_toRightOf="@+id/iv_movieposter"
+        android:src="@drawable/ic_menu_favorite" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating"
+        android:id="@+id/tv_ratingDetails"
+        android:layout_below="@+id/iv_movieposter"
+        android:layout_toRightOf="@+id/tv_popularity"
+        android:layout_toEndOf="@+id/tv_popularity" />
+</RelativeLayout>
