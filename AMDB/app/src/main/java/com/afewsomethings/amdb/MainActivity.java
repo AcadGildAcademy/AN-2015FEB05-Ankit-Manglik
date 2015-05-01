@@ -1,6 +1,5 @@
 package com.afewsomethings.amdb;
 
-import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
@@ -8,44 +7,51 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
-public class MainActivity extends ListActivity {
+public class MainActivity extends ActionBarActivity {
 
-    ListView movielist;
+
     private ProgressDialog pDialog;
     private static String urllatest = "http://api.themoviedb.org/3/movie/latest?api_key=8496be0b2149805afa458ab8ec27560c";
-
+    ListView mlistview;
+    public List<HashMap<String, String>> list =null;
+    public final static int GET = 1;
     private static final String TAG_TITLE = "original_title";
     private static final String TAG_ID = "id";
     private static final String TAG_RELEASEDT = "release_date";
     private static final String TAG_RATING_AVG= "vote_average";
     private static final String TAG_POSTER_PATH= "poster_path";
     JSONArray movies = null;
-    ArrayList<HashMap<String, String>> mlist;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mlist = new ArrayList<HashMap<String, String>>();
-        movielist = getListView();
+        mlistview = (ListView)findViewById(R.id.lv_movielist);
+        HandleJSON handleJSON = new HandleJSON();
 
+        movies = handleJSON.makeServiceCall(urllatest);
+
+
+        final Myadapter myadapter = new Myadapter(this,list);
+        mlistview.setAdapter(myadapter);
 
 
 
         getActionBar();
         new GetMovies().execute();
+
+
     }
 
 
@@ -120,7 +126,7 @@ public class MainActivity extends ListActivity {
                         movie.put(TAG_RATING_AVG, rating);
 
                         // adding contact to contact list
-                        mlist.add(movie);
+                        list.add(movie);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -131,21 +137,6 @@ public class MainActivity extends ListActivity {
             return null;
         }
 
-        protected void onPostExecute(Void result) {
-            super.onPostExecute(result);
-            // Dismiss the progress dialog
-            if (pDialog.isShowing())
-                pDialog.dismiss();
 
-            ListAdapter adapter = new SimpleAdapter(
-                    MainActivity.this, mlist,
-                    R.layout.movielisting, new String[]{TAG_TITLE, TAG_RELEASEDT,
-                    TAG_RATING_AVG}, new int[]{R.id.tv_movieName,
-                    R.id.tv_releasedDate, R.id.tv_ratingDetails});
-
-            setListAdapter(adapter);
-
-
-        }
     }
 }

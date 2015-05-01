@@ -16,19 +16,21 @@ import java.util.List;
 public class Myadapter extends ArrayAdapter {
 Context context;
 
-    public Myadapter(Context context, int resource) {
-        super(context, resource);
+List<MoviesDB> moviesDBList;
+
+    public Myadapter(Context context, List<MoviesDB> moviesDBList) {
+        super(context, R.layout.activity_main);
 
         this.context=context;
-
+        this.moviesDBList=moviesDBList;
     }
 
-//    public int getCount(){
-//        if (notesList.size()>0)
-//            return notesList.size();
-//        else
-//            return 0;
-//    }
+    public int getCount(){
+        if (moviesDBList.size()>0)
+            return moviesDBList.size();
+        else
+            return 0;
+    }
 
     @Override
     public View getView(int position, View convertView,ViewGroup parent){
@@ -39,6 +41,12 @@ Context context;
         TextView moviewName = (TextView) rowView.findViewById(R.id.tv_movieName);
         TextView releaseDate = (TextView) rowView.findViewById(R.id.tv_releasedDate);
         TextView ratingDetails = (TextView) rowView.findViewById(R.id.tv_ratingDetails);
+
+        moviewName.setText(moviesDBList.get(position).getMname());
+        releaseDate.setText(moviesDBList.get(position).getMreleasedate());
+        ratingDetails.setText(moviesDBList.get(position).getMvoteavg());
+
+
         return rowView;
     }
 

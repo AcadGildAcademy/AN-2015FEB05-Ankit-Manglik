@@ -33,6 +33,10 @@ public class HandleJSON {
         return this.makeServiceCall(url, method, null);
     }
 
+    public String makeServiceCall (String url){
+
+        return this.makeServiceCall(url,GET,null);
+    }
     /**
      * Making service call
      * @url - url to make request
