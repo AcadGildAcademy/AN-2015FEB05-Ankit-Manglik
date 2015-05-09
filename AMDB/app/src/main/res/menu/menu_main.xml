@@ -6,8 +6,19 @@
         android:title="@string/action_settings"
         android:orderInCategory="200"
         app:showAsAction="always"
-        android:icon="@android:drawable/ic_menu_preferences"
-        />
+        android:icon="@android:drawable/ic_menu_preferences">
+        <menu>
+            <item android:id="@+id/myWatchlist"
+                android:title="My WatchList"/>
+            <item android:id="@+id/myFavorites"
+                android:title="My Favorites"/>
+            <item android:id="@+id/refresh"
+                android:title="Refresh"/>
+        </menu>
+
+
+        </item>
+
     <item android:id="@+id/menuoptions1"
         android:title="Filter"
         android:orderInCategory="100"

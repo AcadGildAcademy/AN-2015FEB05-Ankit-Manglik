@@ -4,13 +4,20 @@ package com.afewsomethings.amdb;
  * Created by ankit on 01-05-2015.
  */
 public class MoviesDB {
-    String mname,mreleasedate,mvoteavg,mposterpath;
+    String mname,mreleasedate,mvoteavg,mposterpath,mId;
 
+    public String getmId() {
+        return mId;
+    }
+
+    public void setmId(String mId) {
+        this.mId = mId;
+    }
 
     public MoviesDB(){}
 
-    public MoviesDB (String mname, String mreleasedate, String mvoteavg, String mposterpath){
-
+    public MoviesDB (String mId,String mname, String mreleasedate, String mvoteavg, String mposterpath){
+        this.mId=mId;
         this.mname=mname;
         this.mreleasedate=mreleasedate;
         this.mvoteavg=mvoteavg;

@@ -36,7 +36,8 @@
         android:text="Date"
         android:id="@+id/tv_releasedDate"
         android:layout_alignTop="@+id/tv_releasedOn"
-        android:layout_centerHorizontal="true" />
+        android:layout_toRightOf="@+id/tv_ratingDetails"
+        android:layout_toEndOf="@+id/tv_ratingDetails" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -47,29 +48,32 @@
         android:layout_toRightOf="@+id/iv_movieposter"
         android:layout_toEndOf="@+id/iv_movieposter" />
 
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
-        android:layout_below="@+id/tv_releasedDate"
-        android:layout_toRightOf="@+id/tv_releasedOn"
-        android:layout_alignBottom="@+id/tv_popularity"
-        android:numStars="5" />
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView2"
+        android:src="@drawable/ic_menu_favorite"
         android:layout_below="@+id/tv_popularity"
         android:layout_toRightOf="@+id/iv_movieposter"
-        android:src="@drawable/ic_menu_favorite" />
+        android:layout_alignBottom="@+id/iv_movieposter" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rating"
         android:id="@+id/tv_ratingDetails"
-        android:layout_below="@+id/iv_movieposter"
-        android:layout_toRightOf="@+id/tv_popularity"
-        android:layout_toEndOf="@+id/tv_popularity" />
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_toRightOf="@+id/tv_releasedOn"
+        android:layout_toEndOf="@+id/tv_releasedOn" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:isIndicator="true"
+        android:layout_above="@+id/tv_ratingDetails"
+        android:layout_toRightOf="@+id/tv_releasedOn"
+        android:layout_toEndOf="@+id/tv_releasedOn" />
+
 </RelativeLayout>
