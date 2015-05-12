@@ -7,7 +7,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/iv_movieposter"
         android:src="@drawable/ic_launcher"
-        android:layout_alignTop="@+id/tv_movieName"
+        android:layout_alignTop="@+id/tv_movieNameD"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Movie Name"
-        android:id="@+id/tv_movieName"
+        android:id="@+id/tv_movieNameD"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/iv_movieposter"
         android:layout_toEndOf="@+id/iv_movieposter"
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="Released On:"
         android:id="@+id/tv_releasedOn"
-        android:layout_below="@+id/tv_movieName"
+        android:layout_below="@+id/tv_movieNameD"
         android:layout_toRightOf="@+id/iv_movieposter"
         android:layout_toEndOf="@+id/iv_movieposter" />
 

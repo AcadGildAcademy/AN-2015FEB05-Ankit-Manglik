@@ -10,7 +10,6 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,7 +44,7 @@ ImageLoader imageLoader;
                 context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View rowView = inflater.inflate(R.layout.movielisting, parent, false);
-        TextView moviewName = (TextView) rowView.findViewById(R.id.tv_movieName);
+        TextView moviewName = (TextView) rowView.findViewById(R.id.tv_movieNameD);
         TextView releaseDate = (TextView) rowView.findViewById(R.id.tv_releasedDate);
         TextView ratingDetails = (TextView) rowView.findViewById(R.id.tv_ratingDetails);
         RatingBar ratingStars = (RatingBar)rowView.findViewById(R.id.ratingBar);

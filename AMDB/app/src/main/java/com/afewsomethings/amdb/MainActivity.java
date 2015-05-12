@@ -1,6 +1,7 @@
 package com.afewsomethings.amdb;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -75,6 +76,8 @@ public class MainActivity extends ActionBarActivity {
                 MoviesDB pos = all_movies.get(position);
                 String movieName = pos.getMname();
                 Toast.makeText(getApplicationContext(), movieName, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,MovieDetails.class);
+                startActivity(intent);
             }
         });
 
